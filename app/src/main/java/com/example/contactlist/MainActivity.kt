@@ -1,10 +1,12 @@
 package com.example.contactlist
 
+import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.contactlist.databinding.ActivityMainBinding
+import com.squareup.picasso.Picasso
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -18,22 +20,28 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         DisplayContacts()
 
+        binding.idaction.setOnClickListener {
+            val intent = Intent(this, AddContacts::class.java)
+            startActivity(intent)
+
+    }
+
     }
     fun DisplayContacts(){
-        var contacts1=ContactData("Sharon","Sharon","07869078","sharon@gmail.com")
-        var contacts2=ContactData("Charles","Charles","07869078","charlesmail.com")
-        var contacts3=ContactData("Sophie","Sophie","07869078","sophie@gmail.com")
-        var contacts4=ContactData("Ann","Ann","07869078","ann@gmail.com")
-        var contacts5=ContactData("Kate","Katen","07869078","kate@gmail.com")
-        var contacts6=ContactData("Paisley","Paisley","07869078","paisley@gmail.com")
-        var contacts7=ContactData("Sera","Sera","07869078","sera@gmail.com")
-        var contacts8=ContactData("Sharon","Sharon","07869078","sharon@gmail.com")
-        var contacts9=ContactData("Charles","Charles","07869078","charlesmail.com")
-        var contacts10=ContactData("Sophie","Sophie","07869078","sophie@gmail.com")
-        var contacts11=ContactData("Ann","Ann","07869078","ann@gmail.com")
-        var contacts12=ContactData("Kate","Katen","07869078","kate@gmail.com")
-        var contacts13=ContactData("Paisley","Paisley","07869078","paisley@gmail.com")
-        var contacts14=ContactData("Sera","Sera","07869078","sera@gmail.com")
+        var contacts1=ContactData("https://images.unsplash.com/photo-1686686200559-3b58bd444f86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60","Sharon","07869078","sharon@gmail.com")
+        var contacts2=ContactData("https://images.unsplash.com/photo-1686686200559-3b58bd444f86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60","Charles","07869078","charlesmail.com")
+        var contacts3=ContactData("https://images.unsplash.com/photo-1686686200559-3b58bd444f86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60","Sophie","0768909","sophie@gmail.com")
+        var contacts4=ContactData("https://images.unsplash.com/photo-1686686200559-3b58bd444f86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60","Ann","07869078","ann@gmail.com")
+        var contacts5=ContactData("https://images.unsplash.com/photo-1686686200559-3b58bd444f86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60","Kate","07869078","kate@gmail.com")
+        var contacts6=ContactData("https://images.unsplash.com/photo-1686686200559-3b58bd444f86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60","Paisley","07869078","paisley@gmail.com")
+        var contacts7=ContactData("https://images.unsplash.com/photo-1686686200559-3b58bd444f86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60","Sera","07869078","sera@gmail.com")
+        var contacts8=ContactData("https://images.unsplash.com/photo-1686686200559-3b58bd444f86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60","Sharon","07869078","sharon@gmail.com")
+        var contacts9=ContactData("https://images.unsplash.com/photo-1686686200559-3b58bd444f86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60","Charles","07869078","charlesmail.com")
+        var contacts10=ContactData("https://images.unsplash.com/photo-1686686200559-3b58bd444f86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60","Sophie","07869078","sophie@gmail.com")
+        var contacts11=ContactData("https://images.unsplash.com/photo-1686686200559-3b58bd444f86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60","Ann","07869078","ann@gmail.com")
+        var contacts12=ContactData("https://images.unsplash.com/photo-1686686200559-3b58bd444f86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60","Katen","07869078","kate@gmail.com")
+        var contacts13=ContactData("https://images.unsplash.com/photo-1686686200559-3b58bd444f86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60","Paisley","07869078","paisley@gmail.com")
+        var contacts14=ContactData("https://images.unsplash.com/photo-1686686200559-3b58bd444f86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60","Sera","07869078","sera@gmail.com")
 
 
 
@@ -41,7 +49,6 @@ class MainActivity : AppCompatActivity() {
         binding.rvcontacts.layoutManager=LinearLayoutManager(this)
         var contactadapter=ContactRvAdapter(contactList)
         binding.rvcontacts.adapter=contactadapter
-
 
     }
 }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -15,4 +15,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/idaction"
+        android:layout_width="89dp"
+        android:layout_height="81dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/rvcontacts"
+        app:layout_constraintTop_toBottomOf="@+id/rvcontacts"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/baseline_add_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>
